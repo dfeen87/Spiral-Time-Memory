@@ -305,13 +305,14 @@ make run-protocol-a
 If you use this work, please cite:
 
 ```
-@article{kruger2025spiral,
-  title = {Spiral-Time with Memory as a Fundamental Principle: 
-           From Non-Markovian Dynamics to Measurement without Collapse},
-  author = {Krüger, Marcel},
-  year   = {2025},
-  note   = {ResearchGate preprint, DOI: 10.13140/RG.2.2.27393.93280}
+@unpublished{kruger2026spiraltime,
+  title  = {Spiral-Time with Memory as a Fundamental Principle:
+            From Non-Markovian Dynamics to Measurement without Collapse},
+  author = {Kr{\"u}ger, Marcel},
+  year   = {2026},
+  note   = {ResearchGate preprint, identifier: 10.13140/RG.2.2.27393.93280}
 }
+
 ```
 
 See [`CITATION.cff`](CITATION.cff) for structured citation metadata for this repository.
@@ -473,7 +474,7 @@ MIT License - see [`LICENSE`](LICENSE) for details.
 
 ## Version History
 
-- **v0.1.0** (January 2025): Initial public research release
+- **v0.1.0** (January 2026): Initial public research release
   - Formal theoretical framework with explicit falsification criteria
   - Reference implementations for theory, analysis, and experimental protocols
   - Comprehensive unit test suite
@@ -511,6 +512,6 @@ Either:
 **Paper Status**: DOI: 10.13140/RG.2.2.27393.93280
 
 **License**: MIT  
-**Last Updated**: January 2025
+**Last Updated**: January 2026
 
 **Ready for collaboration, experimentation, and potential falsification.**
