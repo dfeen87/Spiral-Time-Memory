@@ -504,7 +504,7 @@ Either:
 - Nature exhibits intrinsic temporal memory → measurement problem resolved dynamically
 - Nature is fundamentally Markovian → back to projection postulate
 
-**Let's find out.** 🔬
+**Let's find out.** 
 
 ---
 
