@@ -307,7 +307,7 @@ If you use this work, please cite:
 @article{kruger2025spiral,
   title = {Spiral-Time with Memory as a Fundamental Principle: 
            From Non-Markovian Dynamics to Measurement without Collapse},
-  author = {Kr{\"u}ger, Marcel},
+  author = {Krüger, Marcel},
   year   = {2025},
   note   = {ResearchGate preprint, DOI: 10.13140/RG.2.2.27393.93280}
 }
@@ -408,28 +408,28 @@ See [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
 
 ### Is this a new interpretation of quantum mechanics?
 
-No. This is a **structural hypothesis** with **falsifiable predictions**. If process tensors remain CP-divisible under controlled interventions, the theory fails. It's not about interpretation—it's about measurable signatures.
+No. This is a structural hypothesis with falsifiable predictions. If process tensors remain CP-divisible under controlled interventions, the theory fails. It's not about interpretation—it's about measurable signatures.
 
 ### How does this differ from environmental decoherence?
 
 Three decisive criteria (Section 10 of paper):
-1. Memory kernel is **state-independent** (not coupled to ρ(t))
-2. CP-divisibility violated in **isolated systems** (no environment needed)
-3. Process tensor has **no finite-rank representation** (unbounded temporal correlations)
+1. Memory kernel is state-independent (not coupled to ρ(t))
+2. CP-divisibility violated in isolated systems (no environment needed)
+3. Process tensor has no finite-rank representation (unbounded temporal correlations)
 
 Standard environmental effects fail at least one of these tests.
 
 ### What if all experiments show Markovian dynamics?
 
-Then the theory is **falsified**. This is the point—the framework makes testable predictions that could be wrong.
+Then the theory is falsified. This is the point—the framework makes testable predictions that could be wrong.
 
 ### Are the code implementations canonical?
 
-**No.** See [`IMPLEMENTATIONS.md`](IMPLEMENTATIONS.md). Memory kernel forms, discretization schemes, and numerical parameters are illustrative choices. Alternative implementations are equally valid.
+No. See [`IMPLEMENTATIONS.md`](IMPLEMENTATIONS.md). Memory kernel forms, discretization schemes, and numerical parameters are illustrative choices. Alternative implementations are equally valid.
 
 ### Can this replace quantum field theory?
 
-No. It's an **embedding principle** that reduces to standard QFT in the χ → 0 limit. Think of it as a framework that could contain QFT as a special case, not a replacement.
+No. It's an embedding principle that reduces to standard QFT in the χ → 0 limit. Think of it as a framework that could contain QFT as a special case, not a replacement.
 
 ### What about relativity?
 
@@ -503,8 +503,6 @@ Perform process tensor tomography under controlled interventions:
 Either:
 - Nature exhibits intrinsic temporal memory → measurement problem resolved dynamically
 - Nature is fundamentally Markovian → back to projection postulate
-
-**Let's find out.** 
 
 ---
 
