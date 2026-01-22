@@ -135,7 +135,6 @@ Under controlled intervention and reset protocols, process-tensor reconstruction
 ---
 
 ## Repository Structure
-
 ```
 spiral-time-memory/
 ├── CITATION.cff               # Citation metadata for academic referencing
@@ -143,35 +142,155 @@ spiral-time-memory/
 ├── THEORY.md                  # Formal axioms, assumptions, protocols, falsification criteria
 ├── IMPLEMENTATIONS.md         # Rationale for non-unique implementations and equivalence classes
 ├── QUICKSTART.md              # 5-minute setup and minimal working example
+├── STRUCTURE.md               # Detailed repository organization guide
 ├── requirements.txt           # Pinned runtime and analysis dependencies
+├── setup.py                   # Package installation configuration
+├── pytest.ini                 # Test configuration and coverage settings
+├── Makefile                   # Common development commands
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml             # Automated testing pipeline (Linux/macOS/Windows)
+│
+├── paper/                     # Paper manuscript
+│   └── spiral_time.md         # Complete paper in Markdown format
+│                              
 │
 ├── theory/                    # Mathematical foundations
+│   ├── __init__.py
 │   ├── operators.py           # Extended Hilbert space: H_ext = H_sys ⊗ H_mem
+│   │                          # Triadic operators, von Neumann evolution, memory tracing
 │   └── dynamics.py            # Non-Markovian evolution with explicit memory kernels
+│                              # Memory kernel implementations (exponential, power-law, Gaussian)
 │
-├── analysis/                  # Falsification and diagnostic tools
-│   └── cp_divisibility.py     # Process-tensor CP-divisibility tests
-│                               # + state-independence validation (NEW)
+├── analysis/                  # Falsification and experimental discrimination tools
+│   ├── __init__.py
+│   │
+│   ├── cp_divisibility.py     # CORE: Process tensor CP-divisibility tests
+│   │                          # Quantum channel representation (Choi matrices, Kraus operators)
+│   │                          # CP-divisibility detection (null hypothesis: Markovian)
+│   │                          # Process tensor reconstruction (Protocol B)
+│   │                          # Primary falsification criterion
+│   │
+│   ├── state_independence.py  # CRITERION 1: State-independent memory (Section 10.1)
+│   │                          # Tests if K(t-τ) depends only on time separation
+│   │                          # Statistical analysis across initial states (CV, ANOVA)
+│   │                          # Distinguishes Spiral-Time from environmental effects
+│   │                          # Verdict: State-independent → Spiral-Time
+│   │                          #           State-dependent → Environmental
+│   │
+│   ├── process_tensor_rank.py  # CRITERION 3: Finite-rank obstruction (Section 10.3)
+│   │                           # Singular value decomposition of process tensors
+│   │                           # Rank scaling analysis (growth vs saturation)
+│   │                           # Tests for unbounded temporal correlations
+│   │                           # Verdict: Finite rank → Environmental (d_bath limit)
+│   │                           #           Unbounded → Spiral-Time (continuous χ(t))
+│   │
+│   ├── non_markovianity.py     # MEASURES: Comprehensive non-Markovianity quantification
+│   │                           # BLP measure (Breuer-Laine-Piilo): Information backflow
+│   │                           # RHP measure (Rivas-Huelga-Plenio): CP-divisibility violations
+│   │                           # Fisher information: Parameter estimation perspective
+│   │                           # Consensus framework across multiple measures
+│   │                           # Detects non-Markovianity but doesn't distinguish origin
+│   │                           # (must combine with Criteria 1-3 for discrimination)
+│   │
+│   └── environmental_models.py # BASELINES: Environmental decoherence for comparison
+│                               # Finite-dimensional bath models (rank ≤ d_bath)
+│                               # State-dependent decoherence kernels
+│                               # Collision models (sequential interactions)
+│                               # ComparisonFramework: Side-by-side Spiral-Time vs Environmental
+│                               # Demonstrates all three discrimination criteria
+│                             
 │
-├── experiments/               # Protocol implementations
-│   ├── reset_tests/
-│   │   └── protocol_a.py      # Reset-based memory tests
-│   ├── process_tensor/
-│   │   └── protocol_b.py      # Process tensor reconstruction protocol
-│   └── leggett_garg/
-│       └── protocol_c.py      # Leggett–Garg inequality evaluation
+├── simulations/                # Illustrative comparisons (pedagogical)
+│   ├── __init__.py
+│   ├── markov_comparison.py    # Markovian vs memory dynamics visualization
+│   └── resonance_statistics.py  # Born rule emergence exploration (Eq. 7)
 │
-├── tests/                     # Verification and unit tests
-│   ├── test_operators.py
-│   ├── test_dynamics.py
-│   └── test_cp_divisibility.py
+├── experiments/                # Experimental protocol implementations
+│   ├── __init__.py
+│   │
+│   ├── reset_tests/            # Protocol A: Reset test for history dependence
+│   │   ├── __init__.py
+│   │   ├── protocol_a.py       # Reset-based memory persistence tests
+│   │   └── README.md           # Protocol A experimental details
+│   │
+│   ├── process_tensor/         # Protocol B: Multi-time tomography
+│   │   ├── __init__.py
+│   │   ├── protocol_b.py       # Process tensor reconstruction protocol
+│   │   └── README.md           # Protocol B experimental details
+│   │
+│   └── leggett_garg/           # Protocol C: Controlled interventions
+│       ├── __init__.py
+│       ├── protocol_c.py       # Leggett–Garg inequality under memory suppression
+│       └── README.md           # Protocol C experimental details
 │
-└── examples/                  # Interactive tutorials and demonstrations
-    └── spiral_time_intro.ipynb # Conceptual walkthrough and usage example
+├── tests/                      # Comprehensive unit and integration tests
+│   ├── __init__.py
+│   ├── conftest.py             # Pytest fixtures and configuration
+│   ├── test_operators.py       # Tests for theory/operators.py
+│   ├── test_dynamics.py        # Tests for theory/dynamics.py
+│   ├── test_cp_divisibility.py      # Tests for analysis/cp_divisibility.py
+│   ├── test_state_independence.py   # Tests for state-independence criterion
+│   ├── test_process_tensor_rank.py     # Tests for rank analysis
+│   ├── test_non_markovianity.py        # Tests for non-Markovianity measures
+│   ├── test_environmental_models.py    # Tests for environmental baselines
+│   └── test_protocols.py               # Tests for experimental protocols A-C
+│
+└── examples/                           # Interactive tutorials and demonstrations
+    ├── spiral_time_intro.ipynb         # Core concepts and first demonstrations
+    ├── non_markovian_walkthrough.ipynb # Deep dive into memory effects
+    ├── cp_divisibility_tutorial.ipynb  # Falsification criterion explained
+    ├── discrimination_workflow.ipynb   # Complete Section 10 three-criteria test
+    └── protocol_examples.ipynb         # How to implement Protocols A-C
 
 ```
+---
+
+### Analysis Module Breakdown
+
+The `analysis/` directory now contains a complete suite for experimental discrimination:
+
+| File | Purpose | Section |
+|------|---------|---------|
+| `cp_divisibility.py` | Core CP-divisibility tests, quantum channels | 9.2-9.3 |
+| `state_independence.py` | Test if memory is state-independent | 10.1 |
+| `process_tensor_rank.py` | Test for finite vs unbounded rank | 10.3 |
+| `non_markovianity.py` | BLP, RHP, Fisher measures | Background |
+| `environmental_models.py` | Comparison with environmental effects | 10 |
+
+**Three Discrimination Criteria** (Section 10):
+1. **State-independence** → `state_independence.py`
+2. **CP-violation in isolation** → `cp_divisibility.py`
+3. **No finite-rank representation** → `process_tensor_rank.py`
 
 ---
+
+### Key Organizational Principles
+
+**Theory** (`theory/`): Mathematical foundations only
+- Operators, dynamics, memory kernels
+- No experimental protocols
+
+**Analysis** (`analysis/`): Falsification and discrimination
+- All tools for testing the theory
+- Comparison with environmental effects
+- Multiple non-Markovianity measures
+
+**Experiments** (`experiments/`): Protocol implementations
+- Concrete experimental procedures (A, B, C)
+- Platform-specific adaptations
+- Expected signatures and controls
+
+**Tests** (`tests/`): Verification
+- Unit tests for all modules
+- Integration tests for workflows
+- Reproducibility checks
+
+**Examples** (`examples/`): Education and demonstration
+- Interactive notebooks
+- Complete workflows
+- Visualization tools
 
 ## Quick Start
 
