@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Spiral-Time with Memory: A Falsifiable Framework for Non-Markovian Quantum Dynamics"
+abstract: >
+  A theoretical framework proposing that time carries intrinsic memory,
+  encoded in a triadic structure Ψ(t) = (t, φ(t), χ(t)). Provides a
+  dynamical alternative to the projection postulate with explicit
+  falsification criteria via process-tensor tomography.
+authors:
+  - family-names: "Krüger"
+    given-names: "Marcel"
+    orcid: "https://orcid.org/0009-0002-5709-9729"  
+type: software
+repository-code: "https://github.com/dfeen87/spiral-time-memory"
+url: "https://github.com/dfeen87/spiral-time-memory"
+license: MIT
+keywords:
+  - quantum mechanics
+  - non-markovian dynamics
+  - measurement problem
+  - process tensor
+  - temporal memory
+  - cp-divisibility
+  - falsification
+version: 0.1.0
+date-released: "2025-01-21"
+identifiers:
+  - type: doi
+    value: "10.13140/RG.2.2.27393.93280"  
+  - type: url
+    value: "https://www.researchgate.net/publication/399958489_Spiral-Time_with_Memory_as_a_Fundamental_Principle_From_Non-Markovian_Dynamics_to_Measurement_without_Collapse?channel=doi&linkId=69714718e806a472e6a50958&showFulltext=true"
+references:
+  - type: article
+    title: "Spiral-Time with Memory as a Fundamental Principle: From Non-Markovian Dynamics to Measurement without Collapse"
+    authors:
+      - family-names: "Krüger"
+        given-names: "Marcel"
+    year: 2025
+    journal: "ResearchGate"
+    notes: "Full theoretical manuscript with mathematical appendix"
