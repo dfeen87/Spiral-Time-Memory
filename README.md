@@ -142,7 +142,6 @@ spiral-time-memory/
 ├── THEORY.md                  # Formal axioms, assumptions, protocols, falsification criteria
 ├── IMPLEMENTATIONS.md         # Rationale for non-unique implementations and equivalence classes
 ├── QUICKSTART.md              # 5-minute setup and minimal working example
-├── STRUCTURE.md               # Detailed repository organization guide
 ├── requirements.txt           # Pinned runtime and analysis dependencies
 ├── setup.py                   # Package installation configuration
 ├── pytest.ini                 # Test configuration and coverage settings
