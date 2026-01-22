@@ -1,0 +1,50 @@
+# Spiral-Time with Memory - Python Dependencies
+# Pinned versions for reproducibility
+# Python >= 3.9 required
+
+# Core scientific computing
+numpy==1.24.3
+scipy==1.11.4
+
+# Quantum information (optional, for extended features)
+qutip==4.7.3
+
+# Visualization
+matplotlib==3.7.2
+seaborn==0.12.2
+
+# Jupyter notebooks
+jupyter==1.0.0
+notebook==7.0.6
+ipykernel==6.25.2
+ipywidgets==8.1.1
+
+# Data handling
+pandas==2.0.3
+h5py==3.10.0
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+pytest-xdist==3.3.1  # Parallel testing
+
+# Type checking and linting
+mypy==1.7.1
+black==23.11.0
+flake8==6.1.0
+isort==5.12.0
+
+# Documentation
+sphinx==7.2.6
+sphinx-rtd-theme==2.0.0
+nbsphinx==0.9.3
+
+# Development utilities
+pre-commit==3.5.0
+tqdm==4.66.1
+
+# Optional: Advanced analysis
+# Uncomment if needed for extended protocols
+# networkx==3.2.1  # For topological analysis
+# scikit-learn==1.3.2  # For clustering/PCA
+# plotly==5.18.0  # Interactive plots
