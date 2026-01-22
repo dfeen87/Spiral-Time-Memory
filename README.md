@@ -138,6 +138,7 @@ Under controlled intervention and reset protocols, process-tensor reconstruction
 
 ```
 spiral-time-memory/
+├── CITATION.cff               # Citation metadata for academic referencing
 ├── README.md                  # Project overview, scope, and navigation entry point
 ├── THEORY.md                  # Formal axioms, assumptions, protocols, falsification criteria
 ├── IMPLEMENTATIONS.md         # Rationale for non-unique implementations and equivalence classes
