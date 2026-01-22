@@ -1,6 +1,5 @@
-# Spiral-Time with Memory
-
-**A falsifiable framework for non-Markovian temporal structure in quantum mechanics**
+# Spiral-Time Memory
+## A Falsifiable Framework for Non-Markovian Temporal Structure in Quantum Mechanics
 
 [![ResearchGate](https://img.shields.io/badge/ResearchGate-Spiral%20Time%20with%20Memory%20Paper-green?logo=researchgate)](https://www.researchgate.net/publication/399958489_Spiral-Time_with_Memory_as_a_Fundamental_Principle_From_Non-Markovian_Dynamics_to_Measurement_without_Collapse?channel=doi&linkId=69714718e806a472e6a50958&showFulltext=true)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
