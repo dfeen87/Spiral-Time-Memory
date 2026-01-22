@@ -13,7 +13,7 @@ environmental decoherence via state-independence criteria (Section 10).
 WARNING: Multiple non-Markovianity measures exist (BLP, RHP, trace distance).
 This implements BLP for pedagogical clarity. See IMPLEMENTATIONS.md §4.
 
-Author: Marcel Krüger & Don Michael Feeney Jr
+Author: Marcel Krüger & Don Michael Feeney Jr.
 License: MIT
 """
 
