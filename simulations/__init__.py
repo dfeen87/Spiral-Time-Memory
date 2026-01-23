@@ -55,19 +55,19 @@ Usage Examples
 
 Compare Markovian vs memory dynamics:
     >>> from simulations import visualize_memory_effect
-    >>> 
+    >>>
     >>> # Simple oscillator
     >>> def F(x):
     ...     return np.array([x[1], -x[0]])
-    >>> 
+    >>>
     >>> def g(mem):
     ...     return np.array([0, -0.1 * mem[1]])
-    >>> 
+    >>>
     >>> visualize_memory_effect(F, g, x0, t_span=(0, 10))
 
 Explore Born rule emergence:
     >>> from simulations import demonstrate_born_emergence
-    >>> 
+    >>>
     >>> demonstrate_born_emergence(n_modes=3, T_measure=0.1)
 
 Pedagogical Notes
@@ -123,9 +123,9 @@ __author__ = "Marcel Krüger"
 
 # Module-level pedagogical note
 __pedagogical_note__ = """
-IMPORTANT: All simulations in this module are illustrative demonstrations 
-of theoretical concepts. They are NOT quantitative predictions or claims 
-about specific physical systems. 
+IMPORTANT: All simulations in this module are illustrative demonstrations
+of theoretical concepts. They are NOT quantitative predictions or claims
+about specific physical systems.
 
 For experimental validation, see experiments/protocol_*.py
 For theoretical rigor, see paper/spiral_time.md and THEORY.md

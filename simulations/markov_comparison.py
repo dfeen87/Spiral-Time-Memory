@@ -2,7 +2,7 @@
 Markovian vs Memory Dynamics Visualization
 ===========================================
 
-Illustrative comparison of Markovian (memoryless) evolution with 
+Illustrative comparison of Markovian (memoryless) evolution with
 spiral-time memory dynamics.
 
 PEDAGOGICAL PURPOSE ONLY - NOT QUANTITATIVE PREDICTIONS

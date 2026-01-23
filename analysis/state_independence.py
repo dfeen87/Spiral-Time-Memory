@@ -271,9 +271,12 @@ class StateIndependenceTester:
             print(f"  Average CV: {avg_cv:.4f}")
             print(f"  Max CV: {max_cv:.4f}")
             print(f"  ANOVA p-value: {p_value:.4e}")
-            print(
-                f"  Verdict: {'STATE-INDEPENDENT' if avg_cv < self.config.cv_threshold else 'STATE-DEPENDENT'}"
+            verdict = (
+                "STATE-INDEPENDENT"
+                if avg_cv < self.config.cv_threshold
+                else "STATE-DEPENDENT"
             )
+            print(f"  Verdict: {verdict}")
 
         # Overall verdict
         independent_count = sum(1 for r in results.values() if r["state_independent"])
