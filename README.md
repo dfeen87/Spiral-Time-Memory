@@ -666,4 +666,4 @@ Either:
 **License**: MIT  
 **Last Updated**: January 2026
 
-**Ready for collaboration, experimentation, and potential falsification.**
+**Ready for collaboration, experimentation, and potential falsification.** 
