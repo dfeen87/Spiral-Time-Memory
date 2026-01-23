@@ -39,7 +39,7 @@ class TestEnvironmentalBaselines:
             E1 = np.array([[0, np.sqrt(gamma)], [0, 0]])
             return E0 @ rho @ E0.conj().T + E1 @ rho @ E1.conj().T
         
-        rho_0 = np.array([[1, 0], [0, 0]])  # Excited state
+        rho_0 = np.array([[0, 0], [0, 1]])  # Excited state
         gamma = 0.3
         
         rho_final = amplitude_damping(rho_0, gamma)
@@ -242,16 +242,19 @@ class TestStructuredEnvironments:
         
         def finite_temp_damping(rho, gamma, n_thermal):
             """Damping with thermal excitations."""
-            # Generalized amplitude damping
-            E0 = np.array([[1, 0], [0, np.sqrt(1 - gamma)]])
-            E1 = np.array([[0, np.sqrt(gamma * (1 + n_thermal))], [0, 0]])
-            E2 = np.array([[np.sqrt(gamma * n_thermal), 0], [0, 0]])
+            # Generalized amplitude damping (CPTP)
+            p = 1 / (1 + n_thermal)
+            E0 = np.sqrt(p) * np.array([[1, 0], [0, np.sqrt(1 - gamma)]])
+            E1 = np.sqrt(p) * np.array([[0, np.sqrt(gamma)], [0, 0]])
+            E2 = np.sqrt(1 - p) * np.array([[np.sqrt(1 - gamma), 0], [0, 1]])
+            E3 = np.sqrt(1 - p) * np.array([[0, 0], [np.sqrt(gamma), 0]])
             
-            result = E0 @ rho @ E0.conj().T
-            result += E1 @ rho @ E1.conj().T
-            result += E2 @ rho @ E2.conj().T
-            
-            return result
+            return (
+                E0 @ rho @ E0.conj().T
+                + E1 @ rho @ E1.conj().T
+                + E2 @ rho @ E2.conj().T
+                + E3 @ rho @ E3.conj().T
+            )
         
         rho_0 = np.array([[1, 0], [0, 0]])
         gamma = 0.2
