@@ -17,9 +17,7 @@ class TestProcessTensorRank:
         H_bath = np.array([[0.5, 0], [0, -0.5]])
         H_int = 0.1 * np.kron(np.array([[0, 1], [1, 0]]), np.array([[0, 1], [1, 0]]))
 
-        _ = (
-            np.kron(H_sys, np.eye(dim_bath)) + np.kron(np.eye(dim_sys), H_bath) + H_int
-        )
+        _ = np.kron(H_sys, np.eye(dim_bath)) + np.kron(np.eye(dim_sys), H_bath) + H_int
 
         # Effective process tensor rank ≤ dim_bath²
         max_rank = dim_bath**2

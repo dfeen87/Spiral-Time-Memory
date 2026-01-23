@@ -352,7 +352,9 @@ def run_reset_test(config: ResetTestConfig, spiral_time_mode: bool = True) -> Di
     print(f"  Memory persistence (std χ): {memory_persistence:.4f}")
 
     if spiral_time_mode and independence_test["significant"]:
-        print("\n✓ Spiral-time prediction confirmed: History dependence persists after reset")
+        print(
+            "\n✓ Spiral-time prediction confirmed: History dependence persists after reset"
+        )
     elif not spiral_time_mode and not independence_test["significant"]:
         print("\n✓ Markovian prediction confirmed: No history dependence after reset")
 
