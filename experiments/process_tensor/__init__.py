@@ -35,23 +35,23 @@ Paper Section 9 : Process tensor formalism
 """
 
 from .protocol_b import (
-    ProcessTensorConfig,
-    run_protocol_b,
-    reconstruct_process_tensor,
-    ProcessTensor,
+    CPDivisibilityTest,
     MemoryKernel,
     NonMarkovianEvolution,
-    CPDivisibilityTest,
-    PauliOperators
+    PauliOperators,
+    ProcessTensor,
+    ProcessTensorConfig,
+    reconstruct_process_tensor,
+    run_protocol_b,
 )
 
 __all__ = [
-    'ProcessTensorConfig',
-    'run_protocol_b',
-    'reconstruct_process_tensor',
-    'ProcessTensor',
-    'MemoryKernel',
-    'NonMarkovianEvolution',
-    'CPDivisibilityTest',
-    'PauliOperators'
+    "ProcessTensorConfig",
+    "run_protocol_b",
+    "reconstruct_process_tensor",
+    "ProcessTensor",
+    "MemoryKernel",
+    "NonMarkovianEvolution",
+    "CPDivisibilityTest",
+    "PauliOperators",
 ]

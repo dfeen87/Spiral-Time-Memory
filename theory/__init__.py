@@ -102,35 +102,30 @@ Author: Marcel Krüger
 License: MIT
 """
 
-from .operators import (
-    SpiralTimeOperator,
-    ExtendedHilbertConfig,
-)
-
 from .dynamics import (
     MemoryKernelConfig,
-    memory_kernel,
     NonMarkovianEvolver,
     compare_markov_vs_memory,
+    memory_kernel,
 )
+from .operators import ExtendedHilbertConfig, SpiralTimeOperator
 
 __all__ = [
     # Extended Hilbert space
-    'SpiralTimeOperator',
-    'ExtendedHilbertConfig',
-    
+    "SpiralTimeOperator",
+    "ExtendedHilbertConfig",
     # Non-Markovian dynamics
-    'MemoryKernelConfig',
-    'memory_kernel',
-    'NonMarkovianEvolver',
-    'compare_markov_vs_memory',
+    "MemoryKernelConfig",
+    "memory_kernel",
+    "NonMarkovianEvolver",
+    "compare_markov_vs_memory",
 ]
 
-__version__ = '0.1.0'
-__author__ = 'Marcel Krüger'
+__version__ = "0.1.0"
+__author__ = "Marcel Krüger"
 
 # Module-level documentation
 __doc_sections__ = {
-    'operators': 'Extended Hilbert space H_ext = H_sys ⊗ H_mem',
-    'dynamics': 'Non-Markovian evolution with memory kernels',
+    "operators": "Extended Hilbert space H_ext = H_sys ⊗ H_mem",
+    "dynamics": "Non-Markovian evolution with memory kernels",
 }
