@@ -100,16 +100,12 @@ Author: Marcel Krüger
 License: MIT
 """
 
-from .markov_comparison import (
-    compare_energy_dissipation,
-    plot_phase_space_comparison,
-    visualize_memory_effect,
-)
-from .resonance_statistics import (
-    demonstrate_born_emergence,
-    resonance_time_measure,
-    temporal_coarse_graining,
-)
+from .markov_comparison import (compare_energy_dissipation,
+                                plot_phase_space_comparison,
+                                visualize_memory_effect)
+from .resonance_statistics import (demonstrate_born_emergence,
+                                   resonance_time_measure,
+                                   temporal_coarse_graining)
 
 __all__ = [
     # Markovian comparison

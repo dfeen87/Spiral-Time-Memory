@@ -102,12 +102,8 @@ Author: Marcel Krüger
 License: MIT
 """
 
-from .dynamics import (
-    MemoryKernelConfig,
-    NonMarkovianEvolver,
-    compare_markov_vs_memory,
-    memory_kernel,
-)
+from .dynamics import (MemoryKernelConfig, NonMarkovianEvolver,
+                       compare_markov_vs_memory, memory_kernel)
 from .operators import ExtendedHilbertConfig, SpiralTimeOperator
 
 __all__ = [
