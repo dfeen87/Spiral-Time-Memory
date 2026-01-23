@@ -7,7 +7,8 @@ numpy==1.24.3
 scipy==1.11.4
 
 # Quantum information (optional, for extended features)
-qutip==4.7.3
+# qutip doesn't yet ship wheels for Python 3.12; avoid failing installs in CI.
+qutip==4.7.3; python_version < "3.12"
 
 # Visualization
 matplotlib==3.7.2
