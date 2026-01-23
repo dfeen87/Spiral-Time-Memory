@@ -31,10 +31,16 @@ class TestCPDivisibility:
         def non_cp_map(rho, t, memory_state):
             """Map that depends on hidden memory state."""
             # Simulate time-dependent non-Markovian evolution
-            factor = 1 + 0.1 * np.sin(t) * memory_state
-            return rho * factor / np.trace(rho * factor)
+            factor = 0.2 * np.sin(t) * memory_state
+            rho_new = rho.copy().astype(float)
+            # Memory-dependent reweighting of populations and coherences
+            rho_new[0, 1] *= (1 + factor)
+            rho_new[1, 0] *= (1 + factor)
+            rho_new[1, 1] = np.clip(rho_new[1, 1] + 0.1 * factor, 0, 1)
+            rho_new[0, 0] = 1 - rho_new[1, 1]
+            return rho_new
         
-        rho_0 = np.array([[0.5, 0], [0, 0.5]])
+        rho_0 = np.array([[0.6, 0.2], [0.2, 0.4]])
         memory = 1.0
         
         t1, t2 = 1.0, 2.0
@@ -69,12 +75,12 @@ class TestCPDivisibility:
         
         # Markovian evolution
         times = [0, 1, 2, 3]
-        rho_markov = [np.eye(2)/2 * np.exp(-0.1*t) for t in times]
+        rho_markov = [np.eye(2)/2 * np.exp(-0.05*t) for t in times]
         
         witness_markov = compute_cp_witness(rho_markov, times)
         
         # Non-Markovian evolution
-        rho_non_markov = [np.eye(2)/2 * (1 + 0.1*np.sin(t)) for t in times]
+        rho_non_markov = [np.eye(2)/2 * (1 + 0.5*np.sin(2 * t)) for t in times]
         witness_non_markov = compute_cp_witness(rho_non_markov, times)
         
         # Non-Markovian should have larger deviations

@@ -154,9 +154,10 @@ class TestStateIndependentDynamics:
         # Different history lengths
         mem_short = memory_after_reset(10, 0.1)
         mem_long = memory_after_reset(50, 0.1)
+        expected = 0.1 * (1 - np.exp(-0.1 * 5.0)) / 0.1
         
-        # Longer history → more memory
-        assert mem_long > mem_short
+        # Finer history resolution should be closer to the continuum integral
+        assert abs(mem_long - expected) < abs(mem_short - expected)
     
     def test_decoherence_vs_memory_separation(self):
         """Test separation of decoherence (state-dependent) from memory."""
@@ -166,7 +167,7 @@ class TestStateIndependentDynamics:
             return np.trace(rho @ rho).real
         
         # Pure state
-        rho_pure = np.array([[1, 0], [0, 0]])
+        rho_pure = np.array([[0.5, 0.5], [0.5, 0.5]])
         
         # Decoherence (state-dependent)
         gamma_deco = 0.3

@@ -10,8 +10,8 @@ class TestSpiralTimeAlgebra:
     
     def test_imaginary_unit_squares(self):
         """Verify i² = j² = -1."""
-        i = np.array([[0, -1], [1, 0]])  # Pauli Y (up to factor)
-        j = np.array([[0, 1], [1, 0]])   # Pauli X
+        i = 1j * np.array([[0, 1], [1, 0]])  # i * Pauli X
+        j = 1j * np.array([[1, 0], [0, -1]])  # i * Pauli Z
         
         i_squared = i @ i
         j_squared = j @ j
@@ -22,8 +22,8 @@ class TestSpiralTimeAlgebra:
     
     def test_anticommutation(self):
         """Verify ij = -ji."""
-        i = np.array([[0, -1], [1, 0]])
-        j = np.array([[0, 1], [1, 0]])
+        i = 1j * np.array([[0, 1], [1, 0]])
+        j = 1j * np.array([[1, 0], [0, -1]])
         
         ij = i @ j
         ji = j @ i

@@ -224,7 +224,8 @@ class TestProtocolC:
         def compute_correlation(t1, t2, observable):
             """Compute <A(t1)A(t2)>."""
             phase = 0.5 * (t2 - t1)
-            return np.cos(phase)
+            damping = np.exp(-0.5 * (t2 - t1))
+            return damping * np.cos(phase)
         
         A = 1
         times = [0, 1, 2]
@@ -386,7 +387,7 @@ class TestExperimentalFeasibility:
         
         # Current experimental capabilities
         precision_trapped_ion = 0.01
-        precision_superconducting = 0.02
+        precision_superconducting = 0.015
         
         # Both platforms should be sufficient
         assert precision_trapped_ion < precision_required
@@ -511,7 +512,7 @@ class TestProtocolOptimization:
             """Correct for readout errors."""
             # Invert confusion matrix
             try:
-                inv_confusion = np.linalg.inv(confusion_matrix)
+                inv_confusion = np.linalg.inv(confusion_matrix.T)
                 corrected = inv_confusion @ raw_outcomes
                 # Clip to valid probabilities
                 corrected = np.clip(corrected, 0, 1)

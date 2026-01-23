@@ -3,11 +3,12 @@
 # Python >= 3.9 required
 
 # Core scientific computing
-numpy==1.24.3
+numpy==1.26.4
 scipy==1.11.4
 
 # Quantum information (optional, for extended features)
-qutip==4.7.3
+# qutip doesn't yet ship wheels for Python 3.12; avoid failing installs in CI.
+qutip==4.7.3; python_version < "3.12"
 
 # Visualization
 matplotlib==3.7.2
@@ -20,7 +21,7 @@ ipykernel==6.25.2
 ipywidgets==8.1.1
 
 # Data handling
-pandas==2.0.3
+pandas==2.2.2
 h5py==3.10.0
 
 # Testing

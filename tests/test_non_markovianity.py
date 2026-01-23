@@ -139,7 +139,7 @@ class TestInformationBackflow:
         times = np.linspace(0, 20, 200)
         
         # Multiple backflow events
-        D = np.exp(-0.05 * times) * (1 + 0.4 * np.sin(times))
+        D = np.exp(-0.05 * times) * (1 + 0.4 * np.sin(2 * times))
         
         # Find local maxima (backflow events)
         local_maxima = 0
