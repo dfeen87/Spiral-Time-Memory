@@ -49,37 +49,37 @@ Usage Examples
 
 Basic non-Markovian evolution:
     >>> from theory import MemoryKernelConfig, NonMarkovianEvolver
-    >>> 
+    >>>
     >>> # Define system
     >>> def F(x):
     ...     return np.array([x[1], -x[0]])  # Harmonic oscillator
-    >>> 
+    >>>
     >>> def g(mem_int):
     ...     return np.array([0, -0.1 * mem_int[1]])  # Memory damping
-    >>> 
+    >>>
     >>> # Configure memory
     >>> config = MemoryKernelConfig(kernel_type="exponential", tau_mem=1.0)
-    >>> 
+    >>>
     >>> # Evolve
     >>> evolver = NonMarkovianEvolver(F, g, config, dt=0.01)
     >>> times, states = evolver.evolve(x0, (0, 10))
 
 Extended Hilbert space:
     >>> from theory import SpiralTimeOperator, ExtendedHilbertConfig
-    >>> 
+    >>>
     >>> config = ExtendedHilbertConfig(sys_dim=2, mem_dim=4, epsilon=0.1)
     >>> psi_op = SpiralTimeOperator(config)
-    >>> 
+    >>>
     >>> # Evolve on extended space
-    >>> times, rhos = psi_op.von_neumann_evolution(rho_ext_0, t_final=1.0, 
+    >>> times, rhos = psi_op.von_neumann_evolution(rho_ext_0, t_final=1.0,
     ...                                             chi_trajectory=chi_traj)
-    >>> 
+    >>>
     >>> # Trace over memory
     >>> rho_sys = psi_op.trace_over_memory(rhos[-1])
 
 Compare Markovian vs memory:
     >>> from theory import compare_markov_vs_memory
-    >>> 
+    >>>
     >>> times, x_markov, x_memory = compare_markov_vs_memory(
     ...     x0, F, g, config, (0, 10)
     ... )

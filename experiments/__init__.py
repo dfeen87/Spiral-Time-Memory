@@ -10,7 +10,7 @@ Protocol A: Reset Test for History Dependence
     Expected signature: residual history dependence after reset in spiral-time
     dynamics vs. complete independence in Markovian dynamics.
 
-Protocol B: Process Tensor Tomography  
+Protocol B: Process Tensor Tomography
     Reconstructs multi-time quantum processes and tests CP-divisibility.
     Expected signature: violations of CP-divisibility even in isolated systems
     (intrinsic temporal memory) vs. CP-divisible processes (Markovian).
@@ -27,7 +27,7 @@ Usage
 
 Or run individual protocols:
 >>> from experiments.reset_tests import run_reset_test, ResetTestConfig
->>> from experiments.process_tensor import run_protocol_b, ProcessTensorConfig  
+>>> from experiments.process_tensor import run_protocol_b, ProcessTensorConfig
 >>> from experiments.leggett_garg import run_protocol_c, LeggettGargConfig
 
 References

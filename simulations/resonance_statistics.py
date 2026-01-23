@@ -2,7 +2,7 @@
 Born Rule Emergence from Resonance-Time Measure
 ================================================
 
-Exploratory simulation demonstrating how Born-like quadratic weighting 
+Exploratory simulation demonstrating how Born-like quadratic weighting
 might emerge from time-integrated stability (Equations 12-14).
 
 IMPORTANT: This is a PROPOSAL and EXPLORATION, not a complete derivation
@@ -10,7 +10,7 @@ or replacement for the Born rule. See Paper Section 6 for full context.
 
 Reference: Paper Section 6 (Born Rule Emergence), Equations (12-14)
 
-Author: Marcel Krüger & Don Michael Feeney Jr.  
+Author: Marcel Krüger & Don Michael Feeney Jr.
 License: MIT
 """
 
@@ -310,23 +310,23 @@ def _plot_born_emergence(
     summary_text = """
     Born Rule Emergence Summary
     ═══════════════════════════
-    
+
     Equation (12): Resonance-Time
         Pₙ ∝ ∫|ψₙ(t)|² dt
-        
+
     Equation (13): Temporal Coarse-Graining
         Pₙ = lim(T→0) (1/T) ∫|ψₙ(t)|² dt
-        
+
     Equation (14): Convergence
         Pₙ → |ψₙ(t₀)|²  as T → 0
-    
+
     Key Observation:
     • Time-integrated stability yields
       quadratic weighting
     • Compatible with Gleason's theorem
     • NOT claimed as complete replacement
       for Born rule in all regimes
-    
+
     Status: PROPOSAL for how Born-like
     statistics could emerge from temporal
     structure rather than axiom

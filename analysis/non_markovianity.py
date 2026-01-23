@@ -369,21 +369,23 @@ class NonMarkovianityMeasures:
         ax = axes[1, 1]
         ax.axis("off")
 
-        summary_text = f"""
-        Non-Markovianity Measures Summary
-        
-        BLP (Trace Distance):
-          Value: {blp['blp_max']:.6f}
-          Verdict: {'NON-MARKOVIAN' if blp['is_nonmarkovian'] else 'Markovian'}
-        
-        RHP (CP-Divisibility):
-          Value: {rhp['rhp']:.6f}
-          Verdict: {'NON-MARKOVIAN' if rhp['is_nonmarkovian'] else 'Markovian'}
-        
-        Fisher Information:
-          Increases: {fisher['increases']}
-          Verdict: {'NON-MARKOVIAN' if fisher['is_nonmarkovian'] else 'Markovian'}
-        """
+        summary_text = "\n".join(
+            [
+                "Non-Markovianity Measures Summary",
+                "",
+                "BLP (Trace Distance):",
+                f"  Value: {blp['blp_max']:.6f}",
+                f"  Verdict: {'NON-MARKOVIAN' if blp['is_nonmarkovian'] else 'Markovian'}",
+                "",
+                "RHP (CP-Divisibility):",
+                f"  Value: {rhp['rhp']:.6f}",
+                f"  Verdict: {'NON-MARKOVIAN' if rhp['is_nonmarkovian'] else 'Markovian'}",
+                "",
+                "Fisher Information:",
+                f"  Increases: {fisher['increases']}",
+                f"  Verdict: {'NON-MARKOVIAN' if fisher['is_nonmarkovian'] else 'Markovian'}",
+            ]
+        )
 
         ax.text(
             0.1,
