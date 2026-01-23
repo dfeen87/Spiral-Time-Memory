@@ -5,7 +5,6 @@
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
 ## Overview
 
 This repository explores a minimal theoretical framework where **time itself carries intrinsic memory**, encoded in a triadic structure Ψ(t) = (t, φ(t), χ(t)). The proposal offers:
@@ -18,6 +17,8 @@ This repository explores a minimal theoretical framework where **time itself car
 > This repository is intended as a research and validation framework, not a production physics engine.
 
 **Status**: Theoretical framework with outlined experimental tests. No empirical confirmation yet.
+
+**Orientation**: This repository assumes familiarity with non-Markovian quantum dynamics and process tensor methods. The README serves as a research overview and documents the core claims and falsification logic; formal derivations and proofs are provided in THEORY.md and paper/spiral_time.md.
 
 ---
 
@@ -627,7 +628,7 @@ Either:
 ---
 
 **Repository Version**: 0.1.0  
-**Paper Status**: DOI: 10.13140/RG.2.2.27393.93280
+**Paper Status**: ResearchGate preprint (identifier: 10.13140/RG.2.2.27393.93280)
 
 **License**: MIT  
 **Last Updated**: January 2026
