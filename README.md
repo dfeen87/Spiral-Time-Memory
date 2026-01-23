@@ -491,15 +491,48 @@ make notebook-server
 make clean
 ```
 
-### CI/CD
+### Build & CI
 
-Automated testing on:
-- Python 3.9, 3.10, 3.11, 3.12
-- Linux, macOS, Windows
-- Formatting (Black), linting (flake8), type checking (mypy)
-- Coverage reporting
+The CI pipeline is intentionally minimal, deterministic, and transparent. It runs on GitHub Actions and uses only pinned Python dependencies from `requirements.txt`.
 
-See [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
+**Triggers**
+- `push` and `pull_request` events targeting `main` or `develop`
+- Weekly scheduled run (Sunday 00:00 UTC) to surface dependency drift
+- Manual `workflow_dispatch` runs for reviewers
+
+**What CI runs**
+- **Unit/integration tests** with coverage on Python 3.9–3.12 (Ubuntu only)
+- **Lint + type checks**: Black, isort, flake8, mypy
+- **Notebook execution**: all notebooks in `examples/*.ipynb` are executed with `nbconvert`
+- **Reproducibility check**: deterministic memory-kernel output with fixed seeds
+
+**Reproduce CI locally**
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+# Tests
+pytest tests/ -v --cov=theory --cov=analysis --cov=simulations --cov-report=term-missing
+
+# Lint / type checks
+black --check --diff theory/ analysis/ simulations/ experiments/ tests/
+isort --check-only --diff theory/ analysis/ simulations/ experiments/ tests/
+flake8 theory/ analysis/ simulations/ experiments/ tests/ --count --show-source --statistics
+mypy theory/ analysis/ --ignore-missing-imports --no-strict-optional
+
+# Notebook execution
+for notebook in examples/*.ipynb; do
+  jupyter nbconvert --to notebook --execute --inplace \
+    --ExecutePreprocessor.timeout=600 "$notebook"
+done
+```
+
+**Common failure modes**
+- **Notebook execution errors**: usually indicate a missing dependency or a non-deterministic cell. Keep notebooks deterministic (fixed seeds, no hidden data downloads).
+- **Lint failures**: formatting or import order deviations; run `make format` before committing.
+- **Test failures on specific Python versions**: check for version-sensitive numerical tolerances or dependency pins.
+
+See [`.github/workflows/ci.yml`](.github/workflows/ci.yml) for the exact pipeline definition.
 
 ---
 
