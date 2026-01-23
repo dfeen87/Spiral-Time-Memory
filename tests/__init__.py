@@ -8,12 +8,12 @@ __author__ = "Spiral-Time Research Team"
 
 # Test modules
 __all__ = [
-    'test_operators',
-    'test_dynamics',
-    'test_cp_divisibility',
-    'test_state_independence',
-    'test_process_tensor_rank',
-    'test_non_markovianity',
-    'test_environmental_models',
-    'test_protocols'
+    "test_operators",
+    "test_dynamics",
+    "test_cp_divisibility",
+    "test_state_independence",
+    "test_process_tensor_rank",
+    "test_non_markovianity",
+    "test_environmental_models",
+    "test_protocols",
 ]

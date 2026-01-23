@@ -31,19 +31,19 @@ README.md : Detailed protocol documentation
 """
 
 from .protocol_a import (
-    ResetTestConfig,
-    run_reset_test,
+    HistoryDependenceAnalyzer,
+    MeasurementOperation,
     QuantumState,
     ResetOperation,
-    MeasurementOperation,
-    HistoryDependenceAnalyzer
+    ResetTestConfig,
+    run_reset_test,
 )
 
 __all__ = [
-    'ResetTestConfig',
-    'run_reset_test',
-    'QuantumState',
-    'ResetOperation',
-    'MeasurementOperation',
-    'HistoryDependenceAnalyzer'
+    "ResetTestConfig",
+    "run_reset_test",
+    "QuantumState",
+    "ResetOperation",
+    "MeasurementOperation",
+    "HistoryDependenceAnalyzer",
 ]
