@@ -365,6 +365,17 @@ python experiments/reset_tests/protocol_a.py
 # Or via make
 make run-protocol-a
 ```
+---
+
+### CI Notes
+
+This repository prioritizes reproducibility and executable correctness.
+All tests, simulations, and notebooks are required to pass in CI.
+
+Static linting and type checking are included as advisory signals only.
+Due to the exploratory and numerical nature of the research code, some
+patterns intentionally trade strict static typing for clarity and
+physical correctness.
 
 ---
 
