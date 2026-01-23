@@ -42,18 +42,18 @@ Paper Section 10.5 : Protocol C specification
 
 from .protocol_c import (
     LeggettGargConfig,
-    run_protocol_c,
-    run_leggett_garg_experiment,
-    QuantumEvolution,
+    LeggettGargInequality,
     LeggettGargMeasurement,
-    LeggettGargInequality
+    QuantumEvolution,
+    run_leggett_garg_experiment,
+    run_protocol_c,
 )
 
 __all__ = [
-    'LeggettGargConfig',
-    'run_protocol_c',
-    'run_leggett_garg_experiment',
-    'QuantumEvolution',
-    'LeggettGargMeasurement',
-    'LeggettGargInequality'
+    "LeggettGargConfig",
+    "run_protocol_c",
+    "run_leggett_garg_experiment",
+    "QuantumEvolution",
+    "LeggettGargMeasurement",
+    "LeggettGargInequality",
 ]

@@ -101,11 +101,10 @@ License: MIT
 """
 
 from .markov_comparison import (
-    visualize_memory_effect,
     compare_energy_dissipation,
     plot_phase_space_comparison,
+    visualize_memory_effect,
 )
-
 from .resonance_statistics import (
     demonstrate_born_emergence,
     resonance_time_measure,
@@ -114,18 +113,17 @@ from .resonance_statistics import (
 
 __all__ = [
     # Markovian comparison
-    'visualize_memory_effect',
-    'compare_energy_dissipation',
-    'plot_phase_space_comparison',
-    
+    "visualize_memory_effect",
+    "compare_energy_dissipation",
+    "plot_phase_space_comparison",
     # Born rule emergence
-    'demonstrate_born_emergence',
-    'resonance_time_measure',
-    'temporal_coarse_graining',
+    "demonstrate_born_emergence",
+    "resonance_time_measure",
+    "temporal_coarse_graining",
 ]
 
-__version__ = '0.1.0'
-__author__ = 'Marcel Krüger'
+__version__ = "0.1.0"
+__author__ = "Marcel Krüger"
 
 # Module-level pedagogical note
 __pedagogical_note__ = """
