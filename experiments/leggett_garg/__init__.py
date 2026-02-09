@@ -40,9 +40,14 @@ README.md : Detailed protocol documentation
 Paper Section 10.5 : Protocol C specification
 """
 
-from .protocol_c import (LeggettGargConfig, LeggettGargInequality,
-                         LeggettGargMeasurement, QuantumEvolution,
-                         run_leggett_garg_experiment, run_protocol_c)
+from .protocol_c import (
+    LeggettGargConfig,
+    LeggettGargInequality,
+    LeggettGargMeasurement,
+    QuantumEvolution,
+    run_leggett_garg_experiment,
+    run_protocol_c,
+)
 
 __all__ = [
     "LeggettGargConfig",
