@@ -28,8 +28,7 @@ import numpy as np
 # Add parent directory for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from theory.dynamics import (MemoryKernelConfig,  # noqa: E402
-                             compare_markov_vs_memory)
+from theory.dynamics import MemoryKernelConfig, compare_markov_vs_memory  # noqa: E402
 
 
 @dataclass
