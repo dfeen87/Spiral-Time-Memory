@@ -29,7 +29,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from theory.dynamics import MemoryKernelConfig  # noqa: E402
-from theory.dynamics import compare_markov_vs_memory
+from theory.dynamics import compare_markov_vs_memory  # noqa: E402
 
 
 @dataclass
