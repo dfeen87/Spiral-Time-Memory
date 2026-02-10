@@ -30,9 +30,14 @@ experiments.reset_tests.protocol_a : Full implementation
 README.md : Detailed protocol documentation
 """
 
-from .protocol_a import (HistoryDependenceAnalyzer, MeasurementOperation,
-                         QuantumState, ResetOperation, ResetTestConfig,
-                         run_reset_test)
+from .protocol_a import (
+    HistoryDependenceAnalyzer,
+    MeasurementOperation,
+    QuantumState,
+    ResetOperation,
+    ResetTestConfig,
+    run_reset_test,
+)
 
 __all__ = [
     "ResetTestConfig",

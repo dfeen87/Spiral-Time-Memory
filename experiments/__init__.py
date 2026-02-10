@@ -52,10 +52,14 @@ __author__ = "Spiral-Time Memory Research Group"
 
 # Import protocol modules
 try:
-    from .reset_tests.protocol_a import (HistoryDependenceAnalyzer,
-                                         MeasurementOperation, QuantumState,
-                                         ResetOperation, ResetTestConfig,
-                                         run_reset_test)
+    from .reset_tests.protocol_a import (
+        HistoryDependenceAnalyzer,
+        MeasurementOperation,
+        QuantumState,
+        ResetOperation,
+        ResetTestConfig,
+        run_reset_test,
+    )
 
     PROTOCOL_A_AVAILABLE = True
 except ImportError as e:
@@ -63,10 +67,14 @@ except ImportError as e:
     PROTOCOL_A_AVAILABLE = False
 
 try:
-    from .process_tensor.protocol_b import (CPDivisibilityTest, MemoryKernel,
-                                            NonMarkovianEvolution,
-                                            ProcessTensor, ProcessTensorConfig,
-                                            run_protocol_b)
+    from .process_tensor.protocol_b import (
+        CPDivisibilityTest,
+        MemoryKernel,
+        NonMarkovianEvolution,
+        ProcessTensor,
+        ProcessTensorConfig,
+        run_protocol_b,
+    )
 
     PROTOCOL_B_AVAILABLE = True
 except ImportError as e:
@@ -74,10 +82,13 @@ except ImportError as e:
     PROTOCOL_B_AVAILABLE = False
 
 try:
-    from .leggett_garg.protocol_c import (LeggettGargConfig,
-                                          LeggettGargInequality,
-                                          LeggettGargMeasurement,
-                                          QuantumEvolution, run_protocol_c)
+    from .leggett_garg.protocol_c import (
+        LeggettGargConfig,
+        LeggettGargInequality,
+        LeggettGargMeasurement,
+        QuantumEvolution,
+        run_protocol_c,
+    )
 
     PROTOCOL_C_AVAILABLE = True
 except ImportError as e:
