@@ -34,10 +34,16 @@ README.md : Detailed protocol documentation
 Paper Section 9 : Process tensor formalism
 """
 
-from .protocol_b import (CPDivisibilityTest, MemoryKernel,
-                         NonMarkovianEvolution, PauliOperators, ProcessTensor,
-                         ProcessTensorConfig, reconstruct_process_tensor,
-                         run_protocol_b)
+from .protocol_b import (
+    CPDivisibilityTest,
+    MemoryKernel,
+    NonMarkovianEvolution,
+    PauliOperators,
+    ProcessTensor,
+    ProcessTensorConfig,
+    reconstruct_process_tensor,
+    run_protocol_b,
+)
 
 __all__ = [
     "ProcessTensorConfig",
