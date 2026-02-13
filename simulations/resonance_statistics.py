@@ -66,7 +66,7 @@ def resonance_time_measure(
     for psi in psi_modes:
         # Time-integrated squared amplitude
         integrand = np.abs(psi) ** 2
-        weight = np.trapz(integrand, times)
+        weight = np.trapezoid(integrand, times)
         weights.append(weight)
 
     weights = np.array(weights)
@@ -109,7 +109,7 @@ def temporal_coarse_graining(
 
     # Average over window
     integrand = np.abs(psi_window) ** 2
-    P_coarse = np.trapz(integrand, times_window) / T_window
+    P_coarse = np.trapezoid(integrand, times_window) / T_window
 
     return P_coarse
 
