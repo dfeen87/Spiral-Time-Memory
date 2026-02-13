@@ -216,7 +216,7 @@ def blp_measure(
 
     # Integrate positive derivatives (backflow)
     backflow = np.maximum(0, d_trace_dist)
-    blp = np.trapz(backflow, times[1:])
+    blp = np.trapezoid(backflow, times[1:])
 
     return blp
 

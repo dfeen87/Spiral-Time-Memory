@@ -94,7 +94,7 @@ class NonMarkovianityMeasures:
 
             # Integrate positive parts (backflow)
             backflow = np.maximum(0, dD_dt)
-            blp = np.trapz(backflow, times[1:])
+            blp = np.trapezoid(backflow, times[1:])
             blp_values.append(blp)
 
         # Maximum over state pairs
@@ -156,7 +156,7 @@ class NonMarkovianityMeasures:
 
         # Integrate violations
         if len(cp_violations) > 0:
-            rhp = np.trapz(np.maximum(0, cp_violations), times[1:])
+            rhp = np.trapezoid(np.maximum(0, cp_violations), times[1:])
         else:
             rhp = 0.0
 
