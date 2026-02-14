@@ -212,7 +212,7 @@ class NonMarkovianEvolver:
         # Trapezoidal integration
         # NOTE: Alternative quadrature schemes are equally valid
         if len(times) > 1:
-            memory_int = np.trapezoid(integrand, times, axis=0)
+            memory_int = np.trapz(integrand, times, axis=0)
         else:
             # Single point - integral is approximately zero
             memory_int = integrand[0] * 0
